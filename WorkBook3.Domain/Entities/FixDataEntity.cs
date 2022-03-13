@@ -19,8 +19,20 @@ namespace WorkBook3.Domain.Entities
             {
                 return;
             }
-            var datas = data.Split(',');
-            if(datas.Length < 2)
+            string[] datas = null;
+            if(data.IndexOf(',') != -1)
+            {
+                datas = data.Split(',');
+            }
+            if (data.IndexOf('\t') != -1)
+            {
+                datas = data.Split('\t');
+            }
+            if (data.IndexOf(' ') != -1)
+            {
+                datas = data.Split(' ');
+            }
+            if (datas.Length < 2)
             {
                 return;
             }

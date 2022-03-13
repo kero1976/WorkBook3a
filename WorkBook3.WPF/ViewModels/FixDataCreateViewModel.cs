@@ -58,6 +58,11 @@ namespace WorkBook3.WPF.ViewModels
                     }
 
                 });
+
+            NoClear = new DelegateCommand(() =>
+            {
+                FixDataEntity._no = 1;
+            });
         }
 
         public string Title => "固定長作成";
@@ -105,6 +110,9 @@ namespace WorkBook3.WPF.ViewModels
         /// ファイル作成ボタンクリック.
         /// </summary>
         public DelegateCommand CreateFile { get; }
+
+        public DelegateCommand NoClear { get; }
+        
 
         private string _fixChar = "1";
         /// <summary>

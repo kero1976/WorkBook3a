@@ -17,6 +17,7 @@
             <Label Content="固定文字" />
             <TextBox Width="50" Text="{Binding FixChar}" />
             <Button Command="{Binding CreateColumn}" Content="列情報作成" />
+            <Button Command="{Binding NoClear}" Content="列番号初期化" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="列情報" />
@@ -28,7 +29,10 @@
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Visible" />
         </StackPanel>
-        <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding FixDataList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <DataGrid
+            Height="500"
+            AutoGenerateColumns="True"
+            ItemsSource="{Binding FixDataList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <StackPanel Orientation="Horizontal">
             <Button Command="{Binding CreateData}" Content="データ作成" />
             <Button Command="{Binding CreateFile}" Content="ファイル作成" />
