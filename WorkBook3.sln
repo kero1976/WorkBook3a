@@ -13,6 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkBook3Test.Tests", "Work
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{420AFDB4-F82B-444A-8762-AF9192A5F596}"
 	ProjectSection(SolutionItems) = preProject
+		Debug.zip = Debug.zip
 		WorkBook3Rule.ruleset = WorkBook3Rule.ruleset
 	EndProjectSection
 EndProject
