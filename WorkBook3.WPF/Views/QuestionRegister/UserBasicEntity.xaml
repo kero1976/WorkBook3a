@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="WorkBook3.WPF.Views.QuestionRegister.UserBasicEntity"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <StackPanel>
+
+        <Label Content="問題文" />
+        <TextBox
+            x:Name="QuestionString"
+            Width="{Binding WindowWidth, Mode=TwoWay}"
+            MinHeight="100"
+            MaxWidth="1000"
+            HorizontalAlignment="Stretch"
+            VerticalContentAlignment="Top"
+            AcceptsReturn="True"
+            Text="{Binding QuestionString}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+        <Label Content="選択肢" />
+        <StackPanel Orientation="Horizontal">
+            <TextBox
+                x:Name="ChoiceStringLocal"
+                Width="500"
+                Height="140"
+                AcceptsReturn="True"
+                Text="{Binding ChoiceString}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Visible" />
+            <StackPanel>
+                <RadioButton Checked="RadioButton_Checked" Content="【A】" />
+                <RadioButton Checked="RadioButton_Checked" Content="【A】【B】" />
+                <RadioButton Checked="RadioButton_Checked" Content="なし" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <Label Content="正解" />
+        <TextBox
+            Width="50"
+            HorizontalAlignment="Left"
+            InputMethod.IsInputMethodEnabled="False"
+            MaxLength="1"
+            Text="{Binding CorrectString}"
+            TextWrapping="NoWrap"
+            VerticalScrollBarVisibility="Disabled" />
+        <Label Content="解説" />
+        <TextBox
+            AcceptsReturn="True"
+            Text="{Binding Explantion}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<UserControl
+    x:Class="WorkBook3.WPF.Views.CustomControl.UserCheckbox3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel>
+        <CheckBox Content="基礎問題" IsChecked="{Binding IsBasic}" />
+        <CheckBox Content="応用問題" IsChecked="{Binding IsExpart}" />
+        <CheckBox Content="試験問題" IsChecked="{Binding ExamFlg}" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QuestionListEntityLocal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListEntity>
+    <QuestionEntityLocal>
+      <QestionString>A</QestionString>
+      <Choice>1.A 2.B 3.C 4.D</Choice>
+      <Correct>1</Correct>
+      <Explantion>解説</Explantion>
+      <Group>1</Group>
+      <Tag />
+      <IsBasic>false</IsBasic>
+      <ExamFlg>false</ExamFlg>
+    </QuestionEntityLocal>
+    <QuestionEntityLocal>
+      <QestionString>B</QestionString>
+      <Choice>1.A 2.B 3.C 4.D</Choice>
+      <Correct>1</Correct>
+      <Explantion>解説</Explantion>
+      <Group>1</Group>
+      <Tag />
+      <IsBasic>false</IsBasic>
+      <ExamFlg>false</ExamFlg>
+    </QuestionEntityLocal>
+    <QuestionEntityLocal>
+      <QestionString>C</QestionString>
+      <Choice>1.A 2.B 3.C 4.D</Choice>
+      <Correct>1</Correct>
+      <Explantion>解説</Explantion>
+      <Group>1</Group>
+      <Tag />
+      <IsBasic>false</IsBasic>
+      <ExamFlg>false</ExamFlg>
+    </QuestionEntityLocal>
+  </ListEntity>
+</QuestionListEntityLocal>

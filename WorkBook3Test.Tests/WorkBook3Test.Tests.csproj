@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorkBook3.Domain\WorkBook3.Domain.csproj" />
+    <ProjectReference Include="..\WorkBook3.Infrastructure\WorkBook3.Infrastructure.csproj" />
+    <ProjectReference Include="..\WorkBook3.WPF\WorkBook3.WPF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="テストデータ\Infrastructure\QuestionListFileUnion2Test\データ1\ALL.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="テストデータ\WPF\ALL.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="テストデータ\Infrastructure\QuestionListFileUnion2Test\データ2\" />
+  </ItemGroup>
+
+</Project>

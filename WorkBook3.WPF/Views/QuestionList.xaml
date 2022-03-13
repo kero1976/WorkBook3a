@@ -1,0 +1,139 @@
+﻿<UserControl
+    x:Class="WorkBook3.WPF.Views.QuestionList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CustomControl="clr-namespace:WorkBook3.WPF.Views.CustomControl"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Width="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="800" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="900" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Orientation="Horizontal">
+            <Label Content="件数" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="{Binding CountText}"
+                TextWrapping="Wrap" />
+            <Button Command="{Binding ReLoad}" Content="再描画" />
+            <TextBox Width="100" Text="{Binding Select}" />
+            <Button Command="{Binding Search}" Content="絞り込み" />
+
+            <CustomControl:UserCombo DataContext="{Binding UserCombo}" />
+            <CustomControl:UserCheckbox3 DataContext="{Binding UserCheckbox3}" />
+
+            <Button
+                Width="100"
+                Margin="100,0"
+                Command="{Binding NewButton}"
+                Content="新規登録" />
+        </StackPanel>
+
+
+        <DataGrid
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Width="Auto"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding QuestionList}"
+            SelectedItem="{Binding SelectedQuestion}">
+            <DataGrid.InputBindings>
+                <MouseBinding Command="{Binding ItemSelect}" MouseAction="LeftDoubleClick" />
+            </DataGrid.InputBindings>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Group.DisplayValue}" Value="0.未設定">
+                            <Setter Property="Foreground" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn
+                    Width="200"
+                    Binding="{Binding QuestionString.Value}"
+                    Header="問題">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn
+                    Width="300"
+                    Binding="{Binding Choice.DisplayValue}"
+                    Header="選択肢">
+
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn
+                    Width="300"
+                    Binding="{Binding Correct.DisplayValue}"
+                    Header="正解">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn
+                    Width="300"
+                    Binding="{Binding Explantion}"
+                    Header="解説">
+
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding Group}"
+                    Header="グループ" />
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding IsBasic}"
+                    Header="基本問題" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Tag}"
+                    Header="タグ" />
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding ExamFlg}"
+                    Header="試験" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+
+</UserControl>
